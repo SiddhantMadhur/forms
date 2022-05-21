@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
+
+html,
+body{
+    @apply bg-[#1C1C1C] text-gray-100
+}
+
+.button{
+    @apply bg-[#2E2E2E] px-5 py-2 w-[200px] font-semibold transition rounded-md border-2 border-[#333333] hover:border-[#3ecf8e] filter drop-shadow-lg shadow-[#333333] hover:shadow-[#3bc486]  
+}
+
+.highlight{
+    @apply text-[#3ecf8e]
+}
+
+input {
+    @apply  bg-[#222222] border-[1px] focus:border-[#3E3E3E] py-2 px-4 border-[#3E3E3E] rounded-lg
+}
+
 @tailwind utilities;
+

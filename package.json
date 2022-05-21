@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "start" : "next start",
+    "start": "next start",
     "build": "next build"
   },
   "repository": {
@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/SiddhantMadhur/forms#readme",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.8.0",
+    "@supabase/supabase-js": "^1.35.3",
     "next": "^12.1.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
