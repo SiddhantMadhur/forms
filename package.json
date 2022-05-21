@@ -1,0 +1,31 @@
+{
+  "name": "tecna-forms",
+  "version": "0.1.0",
+  "description": "Tecna Forms is an open-sourced alternative to Google Forms",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "start" : "next start",
+    "build": "next build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiddhantMadhur/forms.git"
+  },
+  "author": "Siddhant Madhur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SiddhantMadhur/forms/issues"
+  },
+  "homepage": "https://github.com/SiddhantMadhur/forms#readme",
+  "dependencies": {
+    "next": "^12.1.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.24"
+  }
+}
