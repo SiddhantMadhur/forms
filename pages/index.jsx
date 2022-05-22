@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
+import { logInWithGithub, supabase } from "../server/config";
 
 function UnAuth() {
   const router = useRouter();
@@ -19,12 +20,17 @@ function UnAuth() {
           </button>
         </div>
         <div>
-          <button className="button">
+          <button
+            onClick={() => {
+              router.push("/auth?type=signin");
+            }}
+            className="button"
+          >
             Log in with <span className="highlight">Email</span>
           </button>
         </div>
         <div>
-          <button className="button">
+          <button onClick={logInWithGithub} className="button">
             Log in with <span className="highlight">GitHub</span>
           </button>
         </div>
@@ -33,11 +39,44 @@ function UnAuth() {
   );
 }
 
+function Auth() {
+  return (
+    <div className="flex justify-center">
+      <div>
+        <div className="text-center text-spgray hover:text-spgraydark transition mb-3">
+          <button
+            onClick={async () => {
+              const user = supabase.auth.user();
+              if (user !== null) {
+                let { data, error } = await supabase.auth.signOut();
+              }
+            }}
+          >
+            sign out
+          </button>
+        </div>
+        <div>
+          <button className="button">Create a Form</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function IndexPage() {
+  const user = supabase.auth.user();
+
+
+  useEffect(() => {
+    supabase.auth.onAuthStateChange(()=>{
+      window.location.assign('/')
+    })
+  }, []);
+
   return (
     <div className="my-5">
-      <div className="text-center text-3xl  font-bold">Tecna Forms</div>
-      <UnAuth />
+      <div className="text-center text-3xl my-3 font-bold">Tecna Forms</div>
+      {user ? <Auth /> : <UnAuth />}
     </div>
   );
 }

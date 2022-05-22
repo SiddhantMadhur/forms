@@ -15,7 +15,7 @@ body{
 }
 
 input {
-    @apply  bg-[#222222] border-[1px] focus:border-[#3E3E3E] py-2 px-4 border-[#3E3E3E] rounded-lg
+    @apply  bg-[#222222] border-[1px] focus:border-[#3E3E3E] py-2 px-4 border-[#3E3E3E] rounded-lg focus:ring-black
 }
 
 @tailwind utilities;
