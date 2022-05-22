@@ -9,7 +9,8 @@ module.exports = {
         success: '#3ecf8e',
         error: '#d9344a',
         spgray: '#7E7E7E',
-        spgraydark: '#3d3d3d'
+        spgraydark: '#3d3d3d',
+        splightblack: '#2E2E2E'
       }
       
     },

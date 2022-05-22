@@ -37,7 +37,7 @@ function OldUser() {
         }}
         className="flex flex-col gap-y-2"
       >
-        <input
+        <input className="inputbox"
           onChange={(e) =>
             setCreateUserInput({
               ...createUserInput,
@@ -47,7 +47,7 @@ function OldUser() {
           placeholder="Email"
           type="email"
         />
-        <input
+        <input className="inputbox"
           onChange={(e) =>
             setCreateUserInput({
               ...createUserInput,
@@ -124,7 +124,7 @@ function NewUser() {
         }}
         className="flex flex-col gap-y-2"
       >
-        <input
+        <input className="inputbox"
           onChange={(e) =>
             setCreateUserInput({
               ...createUserInput,
@@ -134,7 +134,7 @@ function NewUser() {
           placeholder="Email"
           type="email"
         />
-        <input
+        <input className="inputbox"
           onChange={(e) =>
             setCreateUserInput({
               ...createUserInput,
@@ -143,7 +143,7 @@ function NewUser() {
           }
           placeholder="Password"
         />
-        <input
+        <input className="inputbox"
           onChange={(e) =>
             setCreateUserInput({
               ...createUserInput,
