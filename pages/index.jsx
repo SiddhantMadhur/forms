@@ -1,11 +1,12 @@
 import { CircularProgress } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { logInWithGithub, supabase } from "../server/config";
+import { logInWithGithub, logInWithTwitter, supabase } from "../server/config";
 
 function UnAuth() {
   const router = useRouter();
   const [github, setGithub] = useState(false);
+  const [twitter, setTwitter] = useState(false);
 
   return (
     <div className="text-center my-5">
@@ -49,6 +50,28 @@ function UnAuth() {
               <p>
                 {" "}
                 Log in with <span className="highlight">GitHub</span>
+              </p>
+            )}
+          </button>
+        </div>
+        <div>
+          <button
+            disabled={twitter}
+            onClick={async () => {
+              setTwitter(true);
+              await logInWithTwitter();
+              setTwitter(false);
+            }}
+            className="button"
+          >
+            {github ? (
+              <div>
+                <CircularProgress sx={{ color: "#3ecf8e" }} size={25} />
+              </div>
+            ) : (
+              <p>
+                {" "}
+                Log in with <span className="highlight">Twitter</span>
               </p>
             )}
           </button>
@@ -177,6 +200,7 @@ function Auth() {
                             <div className=" my-auto mx-2 text-right">
                               <button
                                 onClick={async () => {
+                                  setFetching(true)
                                   if (user) {
                                     let { data, error } = await supabase
                                       .from("forms")

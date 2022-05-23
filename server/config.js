@@ -13,3 +13,12 @@ export const logInWithGithub = async () => {
     });
   }
 };
+
+export const logInWithTwitter = async () => {
+  const user = supabase.auth.user();
+  if(user===null){
+    let {user, session, error} = await supabase.auth.signIn({
+      provider: "twitter"
+    })
+  }
+}
